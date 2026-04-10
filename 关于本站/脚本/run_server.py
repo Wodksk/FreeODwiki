@@ -29,7 +29,6 @@ repo_name: SalviaSWC/FreeODwiki
 repo_url: https://github.com/SalviaSWC/FreeODwiki
 
 plugins:
-  - search
   - awesome-nav
 
 markdown_extensions:
@@ -237,7 +236,7 @@ def process_src_folder(src_path: Path) -> bool:
 def build_mkdocs():
     print("\n开始运行 mkdocs build...")
     result = subprocess.run(
-        ["mkdocs", "build"], capture_output=True, text=True, cwd=TARGET_DIR
+        ["mkdocs", "build"], capture_output=False, text=True, cwd=TARGET_DIR
     )
     if result.returncode != 0:
         print("mkdocs build 失败：")
