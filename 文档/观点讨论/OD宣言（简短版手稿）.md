@@ -1,4 +1,7 @@
 #  OD宣言(手稿）  
+
+[◀返回](./home.md)
+
 ##  FREEODWIKI  
 
 ###  OD是什么？  
