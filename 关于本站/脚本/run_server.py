@@ -6,13 +6,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-import 生成sitemap
-
-SOURCE_DIR = r"D:\Projects\FreeODwiki"  # 源目录
-TARGET_DIR = r"D:\servers\freeodwiki"  # 目标目录
-TARGET_SRC_DIR = TARGET_DIR + r"\src"
-URL = r"https://freeodwiki.org"
-
+# import 生成sitemap
 # 生成sitemap.generate_sitemap(source_dir, url)
 
 MKDOCS_YML = r"""
@@ -20,33 +14,74 @@ site_name: FreeODwiki——可自由编辑的开源Overdose百科
 site_url: https://freeodwiki.org
 site_author: FreeODwiki贡献者们
 site_description: FreeODwiki是一个开源项目，旨在让每一位ODer都能有效地获取和分享有关Overdose和精神活性物质的信息，并在减少上述事物对ODer造成的伤害的同时，为上述事物提供一个独特的视角。  # 站点描述
-docs_dir: D:\servers\freeodwiki\src  # 你的 Markdown 文件夹路径（相对路径或绝对路径）
-site_dir: D:\servers\freeodwiki\site
+docs_dir: .\src  # 你的 Markdown 文件夹路径（相对路径或绝对路径）
+site_dir: .\site
 
 use_directory_urls: false
 
 repo_name: SalviaSWC/FreeODwiki
 repo_url: https://github.com/SalviaSWC/FreeODwiki
 
+extra_css:
+  - extra.css
+
 plugins:
+#  - search
+#  - optimize
   - awesome-nav
+  - glightbox
 
 markdown_extensions:
   - abbr
   - admonition
   - attr_list
+  - def_list
   - footnotes
-  - pymdownx.details
-  - pymdownx.superfences
+  - md_in_html
+  - material.extensions.preview:
+      configurations:
+        - targets:
+            include:
+              - 药物/*
+              - 药效/*
+              - 文档/*
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
   - pymdownx.snippets
+  - pymdownx.blocks.caption
   - pymdownx.critic
   - pymdownx.caret
+  - pymdownx.details
+#  - pymdownx.emoji:
+#      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+#      emoji_index: !!python/name:material.extensions.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
   - pymdownx.keys
+  - pymdownx.magiclink:
+      normalize_issue_symbols: true
+      repo_url_shorthand: true
+      user: SalviaSWC
+      repo: FreeODwiki
   - pymdownx.mark
-  - pymdownx.tilde
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {}
   - pymdownx.tasklist:
       custom_checkbox: true
-
+  - pymdownx.tilde
+  
 theme:
   language: zh
   name: material  
@@ -109,7 +144,9 @@ def is_external(link: str) -> bool:
     return link.startswith(("http://", "https://", "mailto:", "data:", "//"))
 
 
-def resolve_target_path(current_file: Path, link_path: str, docs_root: Path) -> Path | None:
+def resolve_target_path(
+    current_file: Path, link_path: str, docs_root: Path
+) -> Path | None:
     """解析链接目标的真实源文件路径（返回 None 表示外部链接或无效）"""
     # 去除 #anchor 和 ?query
     clean_path = link_path.split("#")[0].split("?")[0].strip()
@@ -126,7 +163,9 @@ def resolve_target_path(current_file: Path, link_path: str, docs_root: Path) -> 
     return target
 
 
-def remove_dead_links_in_file(filepath: Path, docs_root: Path) -> tuple[bool, str]:
+def remove_dead_links_in_file(
+    filepath: Path, docs_root: Path
+) -> tuple[bool, str]:
     """移除死链接：图片整段删除，文本链接保留文字"""
     try:
         content = filepath.read_text(encoding="utf-8")
@@ -136,7 +175,7 @@ def remove_dead_links_in_file(filepath: Path, docs_root: Path) -> tuple[bool, st
     original = content
 
     # 1. 处理图片链接 ![alt](path)
-    def replace_image(match):
+    def replace_image(match: re.Match):
         alt = match.group(1)
         link = match.group(2)
         target = resolve_target_path(filepath, link, docs_root)
@@ -151,7 +190,7 @@ def remove_dead_links_in_file(filepath: Path, docs_root: Path) -> tuple[bool, st
     content = re.sub(r"!\[([^\]]*)\]\(([^)]+)\)", replace_image, content)
 
     # 2. 处理文本链接 [text](path)
-    def replace_text(match):
+    def replace_text(match: re.Match):
         text = match.group(1)
         link = match.group(2)
         target = resolve_target_path(filepath, link, docs_root)
@@ -204,7 +243,7 @@ def replace_md_to_html_in_file(filepath: Path) -> tuple[bool, str]:
 
 
 # ── 主处理流程 ──
-def process_src_folder(src_path: Path) -> bool:
+def process_src_folder(src_path: Path, target_dir: str) -> bool:
     if not src_path.exists():
         print("错误：src/ 目录不存在")
         return False
@@ -214,11 +253,11 @@ def process_src_folder(src_path: Path) -> bool:
         print("src/ 中未找到 .md 文件")
         return True
 
-    print(f"找到 {len(md_files)} 个 .md 文件，开始处理...\n")
+    print(f"找到 {len(md_files)} 个 .md 文件，开始处理...")
 
     processed = 0
     for md_file in md_files:
-        rel_path = md_file.relative_to(TARGET_DIR)
+        rel_path = md_file.relative_to(target_dir)
         # print(f"处理文件: {rel_path}")
 
         # 步骤1：移除死链接（图片删除、文本保留文字）
@@ -229,17 +268,25 @@ def process_src_folder(src_path: Path) -> bool:
 
         processed += 1
 
-    print(f"\n全部处理完成（{processed} 个文件）")
+    print(f"全部处理完成（{processed} 个文件）")
     return True
 
 
-def build_mkdocs():
-    print("\n开始运行 mkdocs build...")
+def build_mkdocs(target_dir: str, dirty=False, capture_output=True):
+    args = ["mkdocs", "build"]
+    if dirty:
+        args.append("--dirty")
+
+    print(f"开始运行 {" ".join(args)}...")
+
     result = subprocess.run(
-        ["mkdocs", "build"], capture_output=False, text=True, cwd=TARGET_DIR
+        args,
+        capture_output=capture_output,
+        text=True,
+        cwd=target_dir,
     )
     if result.returncode != 0:
-        print("mkdocs build 失败：")
+        print(f"mkdocs build 失败({result.returncode})：")
         print(result.stderr)
         return False
     else:
@@ -247,8 +294,8 @@ def build_mkdocs():
         return True
 
 
-def start_server():
-    site_path = Path(TARGET_DIR) / "site"
+def start_server(target_dir: str):
+    site_path = Path(target_dir) / "site"
     if not site_path.exists():
         print("错误：site/ 目录不存在（build 可能失败）")
         return
@@ -256,43 +303,94 @@ def start_server():
     print(f"\n启动本地服务器：http://localhost:8000")
     print("按 Ctrl+C 停止服务器")
     os.chdir(site_path)
-    subprocess.run(["python", "-m", "http.server", "8000"],
-                   cwd=TARGET_DIR + r"\site")
+    subprocess.run(
+        ["python", "-m", "http.server", "8000"], cwd=target_dir + r"\site"
+    )
 
 
 def main():
-    with open(TARGET_DIR + r"\mkdocs.yml", mode="w", encoding="utf-8") as f:
+    import argparse
+
+    class Args(argparse.Namespace):
+        source_dir: str
+        target_dir: str
+        debug: bool
+        capture_output: bool
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "source_dir",
+        default=r"D:\Projects\FreeODwiki",
+        nargs="?",
+        help="源目录，默认值是为了保持向后兼容而设置的。",
+    )
+    parser.add_argument(
+        "target_dir",
+        default=r"D:\servers\freeodwiki",
+        nargs="?",
+        help="目标目录，默认值是为了保持向后兼容而设置的。",
+    )
+    parser.add_argument(
+        "-d",
+        "--debug",
+        action="store_true",
+        help="开启后会跳过预处理步骤，并将 dirty 参数传入 mkdocs，这将对构建流程进行极大的加速。仅作为调试用途。",
+    )
+    parser.add_argument(
+        "-s",
+        "--show_output",
+        dest="capture_output",
+        action="store_false",  # 进行一个取反
+        help="启用时不会捕获 mkdocs build 的输出，这可以防止你过于无聊。",
+    )
+    args = parser.parse_args(namespace=Args)
+    source_dir = args.source_dir
+    target_dir = args.target_dir
+    target_src_dir = args.target_dir + r"\src"
+
+    with open(target_dir + r"\mkdocs.yml", mode="w", encoding="utf-8") as f:
         f.write(MKDOCS_YML)
 
-    if os.path.exists(TARGET_SRC_DIR):
-        shutil.rmtree(TARGET_SRC_DIR, onexc=remove_readonly)
+    if os.path.exists(target_src_dir):
+        shutil.rmtree(target_src_dir, onexc=remove_readonly)
         print("已清空目标目录")
 
     # 步骤2：重新创建空的目录
-    os.makedirs(TARGET_SRC_DIR)
+    os.makedirs(target_src_dir)
 
     # 步骤3：把源目录完整复制过去
-    shutil.copytree(SOURCE_DIR, TARGET_SRC_DIR, dirs_exist_ok=True)
+    shutil.copytree(source_dir, target_src_dir, dirs_exist_ok=True)
 
     print("复制完成！")
-    print(f"源：{SOURCE_DIR}")
-    print(f"目标：{TARGET_SRC_DIR}")
+    print(f"源：{source_dir}")
+    print(f"目标：{target_src_dir}")
+    print()
 
-    # ---
+    os.chdir(target_dir)
 
-    os.chdir(TARGET_DIR)
-    print("=== MkDocs 死链接自动清理 + 构建 + 预览工具 ===\n")
+    print("=== MkDocs 死链接自动清理 + 构建 + 预览工具 ===")
+    if args.debug:
+        print("...预处理已被跳过")
+    else:
+        src_path = Path(target_src_dir)
+        if not process_src_folder(src_path, target_dir):
+            if (
+                input("\n预处理出现问题，是否继续 build？(y/n): ")
+                .lower()
+                .startswith("n")
+            ):
+                sys.exit(1)
 
-    src_path = Path(TARGET_SRC_DIR)
-    if not process_src_folder(src_path):
-        if input("\n预处理出现问题，是否继续 build？(y/n): ").lower().startswith("n"):
-            sys.exit(1)
-
-    if not build_mkdocs():
-        if input("\nmkdocs build 失败，是否仍要启动服务器？(y/n): ").lower().startswith("n"):
+    print()
+    if not build_mkdocs(target_dir, args.debug, args.capture_output):
+        if (
+            input("\nmkdocs build 失败，是否仍要启动服务器？(y/n): ")
+            .lower()
+            .startswith("n")
+        ):
             sys.exit(2)
 
-    start_server()
+    start_server(target_dir)
 
 
 if __name__ == "__main__":
