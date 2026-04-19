@@ -12,10 +12,21 @@
 此外，必须翻译完全，不得省略任何内容。
 
 - 你给出的翻译，应该严格遵循原文段落划分，不要添加、删除、修改段落，因为我要将其送给一个Javascript脚本。
-- 输出格式(要带引号)：const chineseParas = [标题中文, 药物中文, 药物剂量表格(见下) ,段落1, 段落2, ......, 段落n-1, 段落n, 尾注] 
-- 在药物中文和段落之间可能出现，作者、引用、原网址、药物剂量表、体重。若有，忽略之。
+- 输出格式(要带引号，注意只有时间1元素必定要加一个“给药:”，其余没有)：
+  const chineseParas = [标题中文, 药物中文 ,段落1, 段落2, ......, 段落n-1, 段落n, 尾注];
+  const chineseDosechart = [给药:时间1, 剂量1, 给药方式1, 物质1, 形式1, ......] 
+  const chineseBodyweight = 体重翻译字符串(数字+单位)
+- 在药物中文和段落之间可能出现，作者、引用、原网址。若有，忽略之。
 - 翻译标题下药物时，使用如下格式（如果药物不足，这个顺序向右对准）：药物1、药物2、......、药物n-2、药物n-1&药物n
 - 翻译尾注时，跳过"ExpYear...","Gender...","Age...","Published...","[ViewPDF(to print)]..."，直接翻译最后一段。
+- 药物剂量表格原文的格式，但是你要输出成一维数组：
+
+| 时间       | 剂量     | 给药方式 | 物质                  | 形式          |
+|------------|----------|----------|-----------------------|---------------|
+| 给药: |  |  |  |  |
+|       |  |  |  |  |
+|       |  |  |  |  |
+|       |  |  |  |  |
 
 </prompt>
 <glossary>
@@ -125,23 +136,31 @@
 // chineseParas[1] = 药物中文
 // chineseParas[2...] = 正文各段中文
 
-const chineseParas = [
-  "季节终会与你擦肩而过：LSD用于自我提升",
-  "LSD、大麻&一氧化二氮",
-  "在我那段迷幻兮兮的20多岁岁月结束十五年后（那时接触过各种各样的迷幻剂和其他有趣物质），命运几经转折，让我在人生一个艰难的夏天里两次重新接触了LSD。20多岁时，我一直在试着寻找上帝，并靠用药来试图实现这个目标。如今我已经40多岁了，是个无神论者，也不知道该期待些什么。20多岁时，我一直在试着寻找上帝，并靠用药来试图实现这个目标。如今我已经40多岁了，是个无神论者，也不知道该期待些什么，所以我担心自己可能会有一场糟糕体验。在这之前，我试着建立一些不错的日常习惯，比如：“每天走15分钟路”“每天做一件家务”“在体验那天之前完成你的音乐项目，这样你就能在体验时听它了”之类，还想着“嗯，就算我玩得不太好，我也可以想想这些积极的事，也许心情会被提起来嘛”。幸好，第一次那晚（两片）我玩得非常开心，而且我还发现，当我终于回顾自己的进步时，会涌起一阵强烈的喜悦浪潮。那天之后，我继续保持这些日常习惯，而每当我开始变懒时，我就会回想起那阵强烈的喜悦，它反过来又会激励我。难道我是碰到了什么门道吗？",
-  "我弄到了三片，准备在生日那天安排一次独自体验。这一次，我决定再加上一个目标（除了那些我一直在继续、只偶尔有点小失误的目标之外）——重新养成记录每日全部热量摄入的习惯（也希望能把后来又长回来的体重减掉一点）。只是这一次，我没有像以前那样每周日休息一天不记，而是在体验日前整整一个月里，每一天都记录。我还试着在那一周里“先把桌子摆好”，在工作、副业、音乐项目和家庭生活上都更用力一些。我知道自己生日当天和第二天都不用上班。这会像是额外赚到的一个周末，而为了彻底与世隔绝，我借到了一个朋友的湖边小屋。没有责任、没有人类之类的干扰。",
-  "日落时，我走到码头上，抽了一点大麻，吃了半颗100毫克THC软糖，然后把贴片放到舌下。我排了一份Yes、Genesis和King Crimson的播放列表，摆好音箱、灯带（顺带一提，这真是体验时超棒的配件）、笔记本电脑和一氧化二氮气弹，然后就让一切开始吧。我也很开心地报告一下：是的，当我回顾的不只是那一个月的热量记录，还有我其他每天做的家务、散步之类的事情时，那股欣快的浪潮又回来了（还有我减掉的10磅！）。",
-  "音乐在LSD作用下听起来很棒。但在*更多*的LSD作用下，听起来会*真的*特别棒。三片真的把联觉这一面推得很强——这很难准确形容，但我记得自己在听到某些音符时，会“感觉到”它们朝我推过来，或者让我一阵发抖之类的。这种感觉强到足以让Steve Howe在《Drama》里的吉他在我眼皮上活成一只咆哮的老虎，把他们翻唱的《America》变成一首管弦乐序曲和史诗般的声音诗篇，让Genesis的《Selling England By The Pound》化作一部不列颠田园日常传奇，还让King Crimson《Red》专辑里的现场即兴曲《Providence》也活了起来。",
-  "当然啦，我也听了自己的项目。我为自己的作品感到非常自豪，而它里面充满了合成器的涌动和叮叮当当的键盘声，对我的联觉喂养得特别好。但我也意识到：“靠……该开始下一个项目了。” 到了这个时候，我也意识到，成年生活和LSD结合在一起，给了我某种对我来说真的很有效的东西。我也意识到，成年生活和LSD结合在一起，给了我某种对我来说真的很有效的东西，并让我对自我提升有了新的看法。我也把这些经验应用到了“为了能在体验时爽到而去做这件事”这种范式之外，而这对我的整体动力有着惊人的效果。我已经安排好了三个月后的下一次机会。到那时候，我要把那个新项目做完，还要减到能穿进我生日礼物那件《Close to the Edge》T恤的体重。我很期待这磨人的三个月，也期待那种让我两次都喜极而泣的快乐极乐再次回来。看起来，计划里投入的时间和/或努力越多，那份喜悦就越强。当然，LSD也不全是玫瑰，总会有些艰难时刻和情绪得自己熬过去。但兜里揣着那份喜悦，真的帮大忙了！",
-  "还有一些别的有趣时刻呢：",
-  "我的思绪开始有点打转了（一氧化二氮吸得稍微有点猛），于是我决定盯着小屋主人挂在墙上的鹿头标本看。它随着音乐一波一波地慢慢瓦解，起伏扭动，直到我眨眼为止。然后一切又会重新开始。我他妈地完全看呆了，而且这还真的有点把我从思绪打转里拽了出来。我记下了这一点：如果糟糕念头再次冒出来，我可以用这个来逃离它们。幸好，后来并没有再出现。",
-  "那天晚上，我会不时走到甲板上，抽上一口烟斗分量的大麻。夜里很凉，昆虫的声音美得不行。树木随着昆虫声，以及从敞开的纱门里传出的音乐一起舞动……在明亮的上弦月下听着《Moonchild》，再伴着蟋蟀的鸣叫……那可真是好东西呢。",
-  "上一次时，体验的“主要部分”大概持续了5个小时才开始退去。我猜是因为多了一片，这次直到6.5小时后才真的开始往下掉。到这时候，我开始看《Kill Bill》，并用了最后几枚一氧化二氮气弹。每一次，屏幕都会重新活过来，仿佛我又回到了高峰一样。不过这次它会随着一氧化二氮药效过去而退下去，而不是像上次那样持续好几分钟。（顺带一提，一氧化二氮和迷幻剂真的是绝配）",
-  "我不是医生、心理学家，也不是萨满。所以我不会声称这对其他人也一定有用。但它对我有用。设定目标——让它们可实现——然后把它们实现。再用迷幻剂来强化其中积极的那一面。冲洗，然后重复吧。我还有一条规则，而且幸好我还没用上：如果我把自己的目标搞砸了——不是偶尔漏掉一下，而是彻底把计划抛到一边——那我就取消这次体验。要保住这种积极联结，不要让失败把它污染了。我希望自己在下一次体验之后还会继续这样下去。我希望好运还能继续眷顾我。我也希望这能帮到读到它的某个人。",
-  "LSD（2）、大麻（1）、一氧化二氮（40）：药物联用（3）、美好体验（4）、音乐讨论（22）、个人准备（45）、治疗意图或结果（49）、回顾 / 总结（11）、独自（16）"
+const chineseDosechart = [
+  "给药:T+ 0:00", "1.1 盎司", "口服", "肉豆蔻", "（粉末 / 晶体）",
+  "T+ 0:32", "480 毫克", "口服", "右美沙芬", "（药丸 / 片剂）",
+  "T+ 0:45", "140 粒种子", "口服", "曼陀罗", "（种子）",
+  "T+ 0:50", "0.5 片", "鼻吸", "氢可酮", "（药丸 / 片剂）",
+  "T+ 0:55", "0.5 片", "鼻吸", "苯丙胺", "（药丸 / 片剂）",
+  "T+ 1:40", "几斗", "抽吸", "大麻", "（植物材料）",
+  "T+ 2:10", "6 盎司", "口服", "酒精", "（液体）"
 ];
 
+const chineseParas = [
+  "千万不要联用太多药物！",
+  "曼陀罗、右美沙芬、氢可酮、哌甲酯、肉豆蔻、酒精&大麻",
+  "引言：在 00 年 10 月 27 日晚上，我极度想让自己进入药效状态，因为我已经清醒了 2 个月。我的朋友 L 一直在唠叨药物联用，最后他拿 1/4 盎司大麻和我打赌，说我不敢一次把这些药全都用了。我答应了这个赌约，然后我们把药都凑齐了（大麻、右美沙芬、酒精和肉豆蔻是我出的钱，他弄来了曼陀罗、维柯丁和利他林）。免得你们好奇，经历这次体验之前，我抽过大麻，体验过右美沙芬（只有一次，用了 8 片），也体验过曼陀罗（在我住的地方它叫“月花”，我吃过两次，两次都是把一个荚果里的种子全吃了），还喝醉过。在这之前我从没试过维柯丁、利他林或肉豆蔻。参与这件事的一共有 3 个人，包括我。我会把另外两个朋友称作“L”和“M”。为了准备这次体验，我们把我要用的药全都弄到了。那天是星期五，所以我能有几天时间躲开父母、警察、老师之类的人（我和 M 一起去了 L 家，L 的父亲一开始在家，但从周五下午 12:45 到周六下午 4:00，L 家里只有我、M 和 L）。我们还准备了冰块、乔利牧场糖和橙汁。大约到下午 1:00 左右，我们把一切都准备好并计划妥当了。",
+  "所有姓名和电话号码都已做过更改。",
+  "我做的第一件事就是把那瓶（呃）肉豆蔻吃下去（我有整整一瓶 1.1 盎司的）。我一次一大口一大口地吃肉豆蔻，尽快咽下去，然后喝橙汁。我最后把那整瓶肉豆蔻都吃完了（这事非常难做到而不吐出来，我差一点就吐了，但我忍住了）。我一直等到下午 1:32，然后把右美沙芬药片吞了下去（科立西丁咳嗽感冒药，16 片，480 毫克右美沙芬）。到 1:45 时，我把月花种子吃了下去（2 个荚果，直径约 2 又 1/4 英寸，大约 140 粒种子，未煮过，也没晒干）。然后我又鼻吸了略少于半片的维柯丁和半片利他林。到 1:53 时，我开始觉得头晕目眩、轻飘飘的。",
+  "到 2:40 时，我还在感受到利他林的作用（我觉得那是利他林，我很亢奋也很头晕，我也觉得月花的体验已经开始了），而且明显感受到了右美沙芬。我想要一点大麻的药效，所以我抽了大约价值 10 美元的一点大麻（我自己有 1/4 盎司可以抽，L 和 M 则有 1/8 盎司给他们两人分）。L 和 M 两个人一起抽了几斗。我们就那样坐着聊天，一直到大约 3:10，这时 M 跟我说，我最好把酒喝掉，再把剩下的大麻抽完，因为接下来我的体验会强得太离谱。我把剩下的大麻都抽了，但那真的把我的喉咙弄得很疼（我因为月花导致口干得厉害）。我一边抽一边含着冰块，那稍微有点帮助，乔利牧场糖就没那么管用了。最后一件要做的事就是喝酒，所以我喝了一杯 L 调的螺丝刀鸡尾酒（里面大概有 4 杯伏特加），还喝了大约一杯摩根船长鹦鹉湾椰子朗姆酒（L 的爸爸买了这个和伏特加，然后就去上班了，不过他不知道别的药）。我感觉自己已经被搞得一塌糊涂了。这之后我唯一记得的事情，就是看了《惊声尖叫3》开头 5 到 10 分钟里的部分片段（这是 M 租来的），还说了点话。故事剩下的部分都是 L 和 M 告诉我的，除了我梦境中的一些片段之外，我一点都不记得。",
+  "当我们在看电影剩下的部分时，我一直往房间外面跑。M 跟着我，我猜我就是在他家里到处乱晃。他会叫我回房间，而我只会胡言乱语地回应，像是“哦，他没有烟斗，但我敢打赌那块宝石会有。”或者“真的吗？我还以为你不会呢。”然后 M 就会把我带回他的房间。我说了些像“阿索，那条狗把我的喉咙烧坏了”之类的话，还指着自己的嘴，然后我试着跑去卫生间，但我一直在摔倒、踉跄，所以我爬到他的垃圾桶旁边，连续往里面吐了两次。我的眼睛非常充血，瞳孔放大，而且眼睛睁得很大。大约 4:00 的时候我尿裤子了，到 4:45 时我几乎无法呼吸。我试着说话，但一点声音都发不出来，于是我只好指着自己的嘴，然后开始哭。我喝了很多橙汁，还吃冰块和乔利牧场糖，想把口干缓解掉。到晚上大约 6:25 时，我在 M 房间的地板上昏过去了。",
+  "我在睡着的时候抽动得很厉害，而且会把所有话都大声说出来。（我的朋友们一直醒着，以确保我不会弄坏什么东西，而且我有时会醒过来，毫无理由地重新摆放东西（比如把一摞纸放进冰箱里，或者把电视在房间里搬来搬去）。从晚上 6:30 到凌晨 3:20，我一直在说话，不过我一直睡到 6:15。以下是我朋友记得我说过的一些话：\n\n“真的吗？”（这句话我至少说了 8 次）\n“喂，B 在吗？”“这里不是 555-0934 吗？”（B 是我的一个朋友）\n“喂，R 在吗？”“都已经 8:00 了，你怎么还这么慢？”（R 是给我卖大麻的人，我说这话的时候大约是晚上 11 点）\n“Y，给我进来！”（Y 是我哥哥，我喊得特别大声）\n“靠，那烟锅跑哪去了！？它刚刚还在这儿！”（这句话我说了很多次，有时会把烟锅说成大麻烟，而且我大多数说这句话的时候都会睁开眼睛）\n“你现在还不能那样做！！”",
+  "我醒来之后的事我全都记得。",
+  "当我醒来的时候，我还在感受月花的作用，不过其他东西的药效都已经退了。我会听到一些声音，而且感觉有点像喝醉了。至于视觉幻觉，我只记得两种（我门上有一团会动的绿色团块，还有颜色差异）。M 跟我说：“哥们你昨晚怎么一直说个不停，看你那样真的太迷了。”我完全不知道他在说什么，然后 M 和 L 才把我一直说了那么久话的事告诉我。我唯一记得的梦，就是给 B 打电话，以及在学校里走来走去。我继续待在 M 家里，不过 L 在早上 8:00 就回家了。我到下午 3:00 才回家，因为 M 说我还在和并不存在的人说话，不过我在下午 2:15 左右停下来了。在那之后我病了大约 3 天，而 L 也给了我那份我完全活该赢得的 1/4 盎司。所以，总之，我会建议你永远不要联用太多药物。我做的事非常愚蠢，差点把自己害死。",
+  "大麻（1）、酒精（61）、苯丙胺（6）、氢可酮（111）、曼陀罗（15）、右美沙芬（22）、肉豆蔻（41）、药品 - 哌甲酯（114）：小团体（2-9人）（17）、艰难体验（5）、药物联用（3）"
+];
 
+const chineseBodyweight = "140磅"
 
 // 剂量表每一行对应一条中文
 // const chineseDoseRows = [
@@ -154,19 +173,22 @@ const chineseParas = [
 const titleSelector = 'div.title';
 const substanceSelector = 'div.substance';
 const bodySelector  = 'div.report-text-surround';
-const doseSelector  = 'table.dosechart tr';
+const dosechartSelector  = 'table.dosechart';
+const bodyweightSelector = 'table.bodyweight';
 const footdataTopicSelector  = 'td.footdata-topic-list';
 
 // ================== 3. 你的本地字体 + 样式 ==================
 const customFont   = "南希新圆体 常规";
 const fontSize     = "19px";
 const fontSizeTitle     = "25px";
+const fontSizeDosechart = "14px";
 // const textColor    = "#00a218";
 // const textColorTitle    = "#009d22";
 const textColor    = "#083f91";
 const textColorTitle    = "#04508e";
+const textColorDosechart    = "#00234e";
 const lineHeight   = "1.3";
-const paraMargin   = "5px 0 5px 0";
+const paraMargin   = "0px 0 0px 0";
 
 // ================== 以下代码基本无需修改 ==================
 
@@ -198,10 +220,6 @@ function applyCnStyle(el, cls, extraCss = '') {
     font-size: ${fontSizeTitle} !important;
     line-height: ${lineHeight} !important;
     color: ${textColorTitle} !important;
-    margin: ${paraMargin} !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
     ${extraCss}
   `;
   }
@@ -212,10 +230,15 @@ function applyCnStyle(el, cls, extraCss = '') {
     font-size: ${fontSize} !important;
     line-height: ${lineHeight} !important;
     color: ${textColorTitle} !important;
-    margin: ${paraMargin} !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
+    ${extraCss}
+  `;
+  }
+  else if (cls=='dosechart-chinese-entry')
+  {
+    el.style.cssText = `
+    font-family: "${customFont}", "Microsoft YaHei", "Noto Sans SC", sans-serif !important;
+    font-size: ${fontSizeDosechart} !important;
+    color: ${textColorDosechart} !important;
     ${extraCss}
   `;
   }
@@ -227,9 +250,6 @@ function applyCnStyle(el, cls, extraCss = '') {
     line-height: ${lineHeight} !important;
     color: ${textColor} !important;
     margin: ${paraMargin} !important;
-    padding: 0 !important;
-    border: none !important;
-    box-shadow: none !important;
     ${extraCss}
   `;
   }
@@ -339,7 +359,7 @@ if (!bodyWrap) {
   }
 }
 
-// D.插入末端表中文
+// D.插入末端表中文(TBD)
 
 const footdataTopicEl = document.querySelector(footdataTopicSelector);
 if (footdataTopicEl && chineseParas[chineseParas.length-1]) {
@@ -347,9 +367,112 @@ if (footdataTopicEl && chineseParas[chineseParas.length-1]) {
     chineseParas[chineseParas.length-1],
     'footdata-topic-list', 
     'td',);
-  const footdataTopicTrEl = footdataTopicEl.parentNode.after()
-  footdataTopicEl.parentNode.after(footdataTopic);
+  footdataTopic.setAttribute("colspan", "2")
+  const chineseTr = document.createElement('tr')
+  chineseTr.appendChild(footdataTopic)
+  footdataTopicEl.parentNode.after(chineseTr);
 } else {
   console.warn('⚠️ 没找到尾注，或 chineseParas[-1] 为空');
 }
 
+// E.插入剂量表中文
+
+const dosechartEl = document.querySelector(dosechartSelector);
+const dosechartColumnNum = dosechartEl.firstElementChild.firstElementChild.childElementCount;
+const dosechartRowNum = dosechartEl.firstElementChild.childElementCount;
+let currentDosechartRow = dosechartEl.firstElementChild.firstElementChild;
+
+if (dosechartEl && chineseDosechart) {
+  for(let i=0;i<dosechartRowNum;i++)
+  {
+    const chineseTr = document.createElement('tr'); 
+    for(let j=0;j<dosechartColumnNum;j++)
+    {
+      let align=undefined;
+      if (j==0){align="right";}
+      else if (j==1||j==2){align="center";}
+      const chineseDosechartEntry = makeCnBlock(
+        chineseDosechart[i*dosechartColumnNum+j], 
+        'dosechart-chinese-entry', 
+        'td', 
+      )
+      if (align) {
+        chineseDosechartEntry.setAttribute('align', align);
+      }
+      chineseTr.appendChild(chineseDosechartEntry);
+    }
+    currentDosechartRow.after(chineseTr);
+    currentDosechartRow = currentDosechartRow.nextElementSibling;
+    currentDosechartRow = currentDosechartRow.nextElementSibling;
+  }
+} else {
+  console.warn('⚠️ 没找到尾注，或 chineseDosechart 为空');
+}
+
+// F.插入体重中文
+
+const bodyweightEl = document.querySelector(bodyweightSelector);
+if (bodyweightEl && chineseBodyweight) {
+  const cnBodyweightTr = document.createElement('tr');
+  const cnBodyweightTitle = makeCnBlock(
+    '体重:', "bodyweight-title", "td"
+  )
+  const cnBodyweightAmount = makeCnBlock(
+    chineseBodyweight, 'bodyweight-amount', "td"
+  )
+  cnBodyweightTr.appendChild(cnBodyweightTitle);
+  cnBodyweightTr.appendChild(cnBodyweightAmount);
+  bodyweightEl.firstElementChild.firstElementChild.after(cnBodyweightTr);
+
+} else {
+  console.warn('⚠️ 没找到尾注，或 chineseParas[-1] 为空');
+}
+
+// 输出文档
+
+let s = `# ${chineseParas[0]}`;
+
+s += `——${chineseParas[1]}\n\n`;
+
+s += "[◀返回](./home.md)\n\n";
+
+s += `原文网址：<${document.URL}>\n\n`
+
+// | 时间       | 剂量     | 给药方式 | 物质                  | 形式          |
+// |------------|----------|----------|-----------------------|---------------|
+// | 剂量： |3片   | 口服 | LSD | 邮票  |
+// |    |  |  口服   |  大麻 - 高THC  | 食物 |
+// |    |  |  抽吸   |  大麻   | 食物 |
+// |    |  |  吸食   |  一氧化二氮   |  |
+
+// 注：“形式”可能没有
+
+let t;
+const doseChinese = "剂量：";
+
+if (dosechartColumnNum==5)
+{
+  t=`| 时间       | 剂量     | 给药方式 | 物质                  | 形式          |\n|------------|----------|----------|-----------------------|---------------|\n`;
+  for(let i=0;i<dosechartRowNum;i++)
+  {
+    t+=`| ${chineseDosechart[i*dosechartColumnNum]} | ${chineseDosechart[i*dosechartColumnNum+1]} | ${chineseDosechart[i*dosechartColumnNum+2]} | ${chineseDosechart[i*dosechartColumnNum+3]} | ${chineseDosechart[i*dosechartColumnNum+4]} |\n`;
+  }
+}
+else{
+  t=`| 时间       | 剂量     | 给药方式 | 物质                  |\n|------------|----------|----------|-----------------------|\n`;
+  for(let i=0;i<dosechartRowNum;i++)
+  {
+    t+=`| ${chineseDosechart[i*dosechartColumnNum]} | ${chineseDosechart[i*dosechartColumnNum+1]} | ${chineseDosechart[i*dosechartColumnNum+2]} | ${chineseDosechart[i*dosechartColumnNum+3]} |\n`;
+  }
+}
+
+s += t + "\n";
+
+s += `|体重:| ${chineseBodyweight}|\n|---|---|   \n\n`;
+
+for(let i=2;i<chineseParas.length-1;i++)
+{
+  s += chineseParas[i] + "\n\n";
+}
+
+console.log(s);
