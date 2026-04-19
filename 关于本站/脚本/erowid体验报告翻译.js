@@ -23,8 +23,6 @@
 
 |英文|译文|备注|
 |----|---|---|
-|See Also|另见|当作为网站栏目时|
-|External Link| 外部链接|当作为网站栏目时|
 |DXM| 右美沙芬|当指右美沙芬(药物)时|
 |DPH|苯海拉明|当指苯海拉明(药物)时|
 |substituted|取代...类物质|当指的是一类物质，且特征是某个物质的衍生物时|
@@ -39,30 +37,19 @@
 |amphetamine|苯丙胺||
 |crack cocaine|霹雳可卡因||
 |crack|霹雳可卡因|指的是霹雳可卡因时|
-|Bufotenin|蟾毒色胺|但请链接到5-HO-DMT.md文件|
+|Bufotenin|蟾毒色胺||
 |psychedelic|迷幻剂||
-|harm reduction practices|伤害减少措施|当适用时|
 |substituted name|取代名称||
 |subjective effect|主观效应||
 |subjective effect index|主观效应索引|当指的是专有名词时|
 |combination|药物联用|当指的是联用药物是|
-|threshold|阈值|当指的是用药剂量与药效的强度时|
-|light|轻微|当指的是用药剂量与药效的强度时|
-|common|中等|当指的是用药剂量与药效的强度时|
-|strong|强烈|当指的是用药剂量与药效的强度时|
-|heavy|严重|当指的是用药剂量与药效的强度时|
-|Total|总时长|当指的是药效与服药后时间的关系时|
-|Onset|药效发作|当指的是药效与服药后时间的关系时|
-|Come up|药效上升|当指的是药效与服药后时间的关系时|
-|Peak|药效达峰|当指的是药效与服药后时间的关系时|
-|Offset|药效褪去|当指的是药效与服药后时间的关系时|
-|After effects|药效残余|当指的是药效与服药后时间的关系时|
+|EXP
 |Oral|口服| 当指的是给药途径时|
 |Smoked|抽吸| 当指的是给药途径时|
 |insufflated|鼻吸| 当指的是给药途径时|
 |intravenous|静脉注射| 当指的是给药途径时|
 |high|药效(等名词)|当指的是药物的效果时，不得翻译为"嗨"|
-|designer drug|策划药|当以政权当局口吻称新型精神活性物质时，否则不得，而是采用研究用化学品|
+|
 
 </glossary>
 <raw>
