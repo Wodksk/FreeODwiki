@@ -11,7 +11,8 @@
 
 此外，必须翻译完全，不得省略任何内容。
 
-- 你给出的翻译，应该严格遵循原文段落划分，不要添加、删除、修改段落，因为我要将其送给一个Javascript脚本。判断是否应该分段的依据是两行文字间是否有一个空行，只有有空行，才算分段。
+- 由于我要发到社交媒体上去，你的翻译必须接地气和吸睛，可以引发读者共鸣，诱导情感的产生。
+- 你给出的翻译，应该严格遵循原文段落划分，不要添加、删除、修改段落，因为我要将其送给一个Javascript脚本。判断是否应该分段的依据是两行文字间是否有至少一个换行符。
 - 输出格式(要带引号，注意只有时间1元素必定要加一个“给药:”，其余没有)：
   const chineseParas = [标题中文, 药物中文 ,段落1, 段落2, ......, 段落n-1, 段落n, 尾注];
   const chineseDosechart = [给药:时间1, 剂量1, 给药方式1, 物质1, 形式1, ......] 
@@ -124,29 +125,35 @@
 | Public Space (Museum, Park, etc) | 公共空间（博物馆、公园等）   |
 | Not Applicable                   | 不适用             |
 
-
-</glossary>
+<fileTree>
+FreeODwiki/ ( 关于本站/ ( FreeOD引论.md Markdown语法指南.md 免责声明.md 如何做出你的第一个贡献.md 实用链接.md 常见问题.md 文档翻译指南和提示词.md 本站精神.md 隐私条款.md ) 文档/ ( 药物分类/ ( 2,5-二甲氧基苯丙胺类物质.md 2,5-二甲氧基苯乙胺类物质.md 4-硫基-2,5-二甲氧基苯乙胺类物质.md home.md N-苄基苯乙胺类物质.md NMDA受体拮抗剂类药物.md β-咔啉类物质.md κ-阿片受体激动剂类药物.md 二芳基乙胺类物质.md 亚甲双氧基苯类物质.md 促梦剂.md 促醒剂.md 共情剂.md 兴奋剂.md 加巴喷丁类物质.md 卡瓦.md 卡西酮类物质.md 合成大麻素类物质.md 吗啡喃类物质.md 吡咯烷基苯基酮类物质.md 吡咯烷类物质.md 吸入剂.md 哌啶类物质.md 哌嗪类物质.md 噻吩二氮卓类物质.md 大麻类.md 宗教致幻剂.md 巴比妥类物质.md 托烷类物质.md 抑制剂.md 拉西坦类物质.md 环烷基胺类物质.md 生物碱类物质.md 益智药.md 致幻剂.md 色胺类物质.md 芳基环己胺类物质.md 苄基哌啶类物质.md 苯丙胺类物质.md 苯乙胺类物质.md 苯二氮卓类物质.md 苯并呋喃类物质.md 药物全索引.md 解离剂.md 谵妄剂.md 迷幻剂.md 金刚烷类物质.md 阿片类药物.md 阿米雷司类物质.md 骆驼蓬生物碱.md 麦角酸酰胺类物质.md 黄嘌呤类物质.md 鼠尾草素类物质.md ) D-柠檬烯食醋DMT提取术.md DPT游离碱转化术.md GABA.md home.md HPPD.md od.md P物质.md SSRI.md 不建议使用的药物.md 不建议使用的词汇.md 乙酰胆碱.md 信号转导.md 催眠药.md 共享注射用材料.md 兴奋剂精神病.md 兴奋剂自慰.md 冥想.md 冷水萃取术.md 减量戒断法.md 前药列表.md 单胺.md 单胺氧化酶抑制剂.md 危险药物联用.md 去甲肾上腺素.md 受体.md 受体拮抗剂.md 受体激动剂.md 受体负向变构调节剂.md 受体逆向激动剂.md 可卡因合成术.md 可逆性MAOA抑制剂.md 复现索引.md 多巴胺.md 多药联用列表.md 大麻巧克力.md 大麻种植术.md 大麻饼干.md 大麻黄油.md 天然药物来源.md 娱乐性用药.md 孢子印.md 室外蘑菇种植术.md 常见合法药物表.md 异构体.md 强制断药戒断法.md 恢复体位.md 恶性旅程.md 情景与心境.md 愈美分离术.md 感官剥夺.md 抗抑郁药.md 抗精神病药.md 抗组胺药.md 教学索引页.md 旅程保姆.md 未知成分策划药的危害.md 止痛药阿片类药物提取术.md 正向变构调节剂.md 死藤水三明治.md 死藤水制备指南.md 死藤水烹饪术.md 毒蝇伞：异噁唑酸脱羧为蝇蕈醇.md 氢氧化钠石脑油法DMT提取术.md 水发酵术.md 治疗指数.md 液体容量给药法.md 清明梦.md 清明梦探索.md 激素.md 濒死体验.md 癫痫发作.md 睡眠瘫痪.md 研究用化学品.md 神经元.md 神经递质.md 神经递质再摄取抑制剂.md 神经递质释放剂.md 科学信息索引页.md 突触.md 简易麦斯卡林酿造技巧.md 精神探索.md 精神活性巧克力.md 糙米粉赛洛西宾蘑菇种植术.md 组胺.md 终止旅程.md 给药剂量.md 给药途径.md 罂粟种子茶.md 肾上腺素.md 舒尔金评级量表.md 药效下降期.md 药效时长.md 药物分类.md 药物剂量分类.md 药物剂量量取.md 药物前药.md 药物戒断反应.md 药物过量.md 蘑菇茶及其制备.md 蟾毒素列表.md 血清素-去甲肾上腺素再摄取抑制剂.md 血清素.md 血清素综合征.md 血脑屏障.md 试剂检测套件.md 谷氨酸.md 负责任的用药索引页.md 较安全的注射指南.md 迷幻剂旅程保姆.md 配体.md 镇静剂.md 阿托品颠茄提取术.md 鼻腔喷雾指南.md ) 药效/ ( home.md 不可名状的恐怖.md 不宁腿.md 不适性身体效应.md 不适性躯体效应.md 专注力强化.md 专注力抑制.md 个人偏见抑制.md 个人意义强化.md 主观效应索引.md 亮度改变.md 人格解体.md 人格退化.md 体味改变.md 体温升高.md 体温调节抑制.md 便秘.md 偏执.md 共情、情感和社交能力增强.md 内省增强.md 内部幻觉.md 几何.md 出汗增加.md 分析能力增强.md 分析能力抑制.md 分离层级.md 分离效应.md 创造力增强.md 创造力抑制.md 刺激.md 剂量独立强度.md 动力抑制.md 动机增强.md 医用药物表.md 去抑制.md 口干.md 口腔麻木.md 听觉幻觉.md 听觉扭曲.md 听觉效应.md 听觉锐度增强.md 听觉锐度抑制.md 呕吐.md 周边信息误判.md 味觉增强.md 味觉幻觉.md 呼吸增强.md 呼吸抑制.md 咳嗽抑制.md 唾液分泌增加.md 嗅觉与味觉效应.md 嗅觉增强.md 嗅觉幻觉.md 嗅觉抑制.md 困倦.md 场景、布景和景观.md 复视.md 外部幻觉.md 多感官效应.md 多重思维流.md 天然来源表.md 失忆.md 头晕.md 头痛.md 妄想.md 存在主义自我实现.md 宣泄.md 宿命论感知.md 对称纹理重复.md 尿频.md 幻觉状态.md 幽默感增强.md 强迫性补量.md 影子人.md 心律异常.md 心率减慢.md 心率增快.md 心理效应.md 心血管效应.md 快感缺失.md 思维减速.md 思维加速.md 思维循环.md 思维混乱.md 思维组织.md 思维连通性.md 性欲减退.md 性欲增强.md 性高潮抑制.md 恶心.md 恶心抑制.md 情感抑制.md 情景与情节.md 情绪强化.md 惊恐发作.md 感知到接触意识的内在机制.md 成分可控性.md 成瘾抑制.md 抑郁.md 抑郁减轻.md 排尿困难.md 支气管扩张.md 放大.md 新型认知状态.md 新奇感增强.md 既视感.md 时间扭曲.md 时间缩放.md 易怒.md 暂时性勃起功能障碍.md 暗示性强化.md 暗示性抑制.md 机械景观.md 梦境强化.md 梦境抑制.md 概念性思维.md 模式识别增强.md 模式识别抑制.md 正念.md 残影.md 永恒主义感知.md 沉浸感强化.md 流泪.md 流涕.md 深度感知扭曲.md 混乱.md 清醒度.md 漂移.md 濒死感.md 灵性增强.md 焦虑.md 焦虑抑制.md 物体改变.md 物体激活.md 狂笑.md 环境切片.md 环境图案化.md 环境球体化.md 环境立体主义.md 现实感丧失.md 畏光.md 痰液增多.md 瘙痒感.md 癫痫发作.md 癫痫发作抑制.md 皮肤潮红.md 相互依存的对立面感知.md 眼球滑动.md 瞳孔扩大.md 瞳孔缩小.md 磨牙.md 空间定向障碍.md 精神病发作.md 纹理液化.md 统一感与互联感.md 耐力增强.md 肌肉收缩.md 肌肉松弛.md 肌肉痉挛.md 肌肉紧张.md 肌肉颤动.md 胃痉挛.md 胃胀.md 背痛.md 脑电击感.md 脑血管效应.md 脱水.md 腹泻.md 自主实体.md 自发性情感.md 自发性躯体感觉.md 自发性躯体运动.md 自我替换.md 自我死亡.md 自我膨胀.md 自我设计感知.md 自杀意念.md 血压升高.md 血压降低.md 血管扩张.md 血管收缩.md 衍射.md 视物振动.md 视觉分离.md 视觉加工减慢.md 视觉加工加速.md 视觉变形.md 视觉增强.md 视觉扭曲.md 视觉抑制.md 视觉拉伸.md 视觉拖尾.md 视觉效应.md 视觉翻转.md 视觉迷雾.md 视觉递归.md 视觉锐度增强.md 视觉锐度抑制.md 视角幻觉.md 触觉增强.md 触觉幻觉.md 触觉抑制.md 触觉效应.md 认知不快.md 认知减退.md 认知增强.md 认知强化.md 认知抑制.md 认知效应.md 认知欣快.md 认知疲劳.md 记忆回放.md 记忆增强.md 记忆抑制.md 语无伦次.md 语言能力抑制.md 谵妄.md 超个人效应.md 躁狂.md 身份改变.md 躯体分离.md 躯体压力感.md 躯体增强.md 躯体形态感改变.md 躯体抑制.md 躯体控制增强.md 躯体改变.md 躯体效应.md 躯体欣快感.md 躯体沉重感.md 躯体疲劳.md 躯体自主.md 躯体轻盈感.md 过度打哈欠.md 运动控制丧失.md 返老还童感.md 透视扭曲.md 通感.md 重力感改变.md 镇痛.md 镇静.md 音乐欣赏能力增强.md 颜色偏移.md 颜色增强.md 颜色抑制.md 颜色替换.md 颜色染色.md 食欲增强.md 食欲抑制.md ) 药物/ ( 1,4-丁二醇.md 1B-LSD.md 1cP-AL-LAD.md 1cP-LSD.md 1cP-MiPLA.md 1P-ETH-LAD.md 1P-LSD.md 1V-LSD.md 2,5-DMA.md 2-AI.md 2-DPMP.md 2-FA.md 2-FDCK.md 2-FEA.md 2-FMA.md 2-MMC.md 25B-NBOH.md 25B-NBOMe.md 25C-NBOH.md 25C-NBOMe.md 25D-NBOMe.md 25I-NBOH.md 25I-NBOMe.md 25N-NBOMe.md 2C-B-FLY.md 2C-B.md 2C-C.md 2C-D.md 2C-E.md 2C-EF.md 2C-H.md 2C-I.md 2C-P.md 2C-T-2.md 2C-T-21.md 2C-T-7.md 2C-T.md 2M2B.md 3,4-CTMP.md 3-Cl-PCP.md 3-CMC.md 3-FA.md 3-FEA.md 3-FMA.md 3-FPM.md 3-HO-PCE.md 3-HO-PCP.md 3-Me-PCP.md 3-Me-PCPy.md 3-MeO-PCE.md 3-MeO-PCMo.md 3-MeO-PCP.md 3-MMC.md 3C-E.md 4-AcO-DET.md 4-AcO-DiPT.md 4-AcO-DMT.md 4-AcO-MiPT.md 4-CA.md 4-FA.md 4-FMA.md 4-FMC.md 4-HO-DiPT.md 4-HO-EPT.md 4-HO-MET.md 4-HO-MiPT.md 4-HO-MPT.md 4-MeO-PCP.md 4-MMC-MeO.md 4-MMC.md 4-甲基阿米雷司.md 4C-D.md 4F-EPH.md 4F-MPH.md 5-APB.md 5-HO-DMT.md 5-HTP.md 5-MAPB.md 5-MeO-DiBF.md 5-MeO-DiPT.md 5-MeO-DMT.md 5-MeO-MiPT.md 5-MeO-αMT.md 5F-AKB48.md 5F-PB-22.md 6-APB.md 6-APDB.md 8-氯茶碱.md AB-CHMINACA.md AB-FUBINACA.md AL-LAD.md ALD-52.md Alpha-GPC.md APICA.md BOD.md Bromo-DragonFLY.md bron.md DCK.md DET.md DiPT.md DMT.md DMXE.md DOB.md DOC.md DOI.md DOM.md DPD.md DPT.md EPH.md EPT.md FXE.md GBL.md GHB.md home.md HXE.md IPPH.md JWH-018.md JWH-073.md LAE-52.md lsa.md LSD.md LSM-775.md LSZ.md mCPP.md MDA.md MDAI.md MDEA.md MDEC.md MDMA.md MDMC.md MDNEB.md MDNEP.md MDNMB.md MDNMP.md MDPHP.md MDPV.md MET.md MiPLA.md MiPT.md MK-801.md MMDA.md MPT.md MXE.md MXiPr.md MXPr.md N-乙酰半胱氨酸.md N-甲基二氟莫达菲尼.md N-甲基环唑酮.md NEH.md NEP.md NM-2-AI.md NMH.md NMP.md noopept.md O-PCE.md O-去甲曲马多.md PARGY-LSD.md PCE.md PCP.md PMA.md PMMA.md PRO-LAD.md RTI-111.md SAM-e.md Semax.md STS-135.md THJ-018.md THJ-2201.md TMA-2.md TMA-6.md U-47700.md win-1161-3.md α-PHP.md α-PiHP.md α-PVP.md αMT.md βk-2C-B.md 丁丙诺啡.md 三唑仑.md 丙戊酸.md 丙戊酸盐.md 丙氯拉嗪.md 乌羽玉.md 乙卡西酮.md 乙基吗啡.md 乙酰芬太尼.md 二氟莫达菲尼.md 二氢去氧吗啡.md 二氢可待因.md 二氯地西泮.md 亚硝酸酯.md 亚铜绿裸盖菇.md 伊博格碱.md 伪麻黄碱.md 佐匹克隆.md 依替唑仑.md 依芬尼定.md 依非韦仑.md 侧柏酮.md 利右苯丙胺.md 利培酮.md 加兰他敏.md 加巴喷丁.md 加波沙多.md 劳拉西泮.md 匹卡米隆.md 卡瓦.md 卡痛.md 卡立普多.md 卡西酮.md 去氯依替唑仑.md 反苯环丙胺.md 古巴裸盖菇.md 可乐定.md 可卡因.md 可可.md 可待因.md 右丙氧芬.md 右美沙芬.md 司可巴比妥.md 司来吉兰+苯乙胺.md 吗啡.md 吡拉西坦.md 吡溴唑仑.md 吸入剂.md 咖啡因.md 咖啡属.md 咪达唑仑.md 哌甲酯.md 哮喘片.md 唑吡坦.md 喹硫平.md 噻奈普汀.md 圣佩德罗仙人掌.md 圣佩特罗仙人掌.md 地西泮.md 塔喷他多.md 墨西哥裸盖菇.md 墨西哥鼠尾草.md 复方甘草片.md 夏威夷小木玫瑰.md 多拉西敏.md 大果柯拉豆.md 大麻.md 大麻二酚.md 天仙子.md 奥拉西坦.md 奥氮平.md 安非他酮.md 尼古丁.md 尼氟西泮.md 巴氯芬.md 布罗曼坦.md 异丙嗪.md 愈美片.md 戊巴比妥.md 扎来普隆.md 普拉西坦.md 普瑞巴林.md 普罗斯卡林.md 普罗林坦.md 曲马多.md 曼陀罗.md 曼陀罗属.md 替利定.md 替扎尼定.md 替马西泮.md 橙黄鹅膏.md 死藤.md 死藤水.md 毒蝇伞.md 氟哌啶醇.md 氟氯替唑仑.md 氟溴唑仑.md 氟溴西泮.md 氟硝唑仑.md 氟硝西泮.md 氟菲尼布特.md 氟阿普唑仑.md 氟马西尼.md 氢可酮.md 氧化亚氮.md 氯氮平.md 氯硝唑仑.md 氯硝西泮.md 氯胺酮.md 氯苄雷司.md 泛相思汤.md 洛哌丁胺.md 海洛因.md 溴西泮.md 烟草.md 烟草属.md 烯丙艾斯卡林.md 牵牛花.md 环唑酮.md 环己丙甲胺.md 玻利维亚火炬仙人掌.md 甲丙氨酯.md 甲卡西酮.md 甲喹酮.md 甲基噻吩丙胺.md 甲基己胺.md 甲基烯丙基艾斯卡林.md 甲基苯丙胺.md 甲氧芬尼定.md 睡茄.md 石山碱甲.md 硝基甲喹酮.md 秘鲁火炬仙人掌.md 米氮平.md 精神活性相思树属植物.md 纳洛酮.md 细花含羞草.md 绿九节.md 罂粟.md 美替唑仑.md 美沙酮.md 美金刚.md 羟吗啡酮.md 羟吗啡酮腙.md 羟嗪.md 羟考酮.md 翠冠玉.md 考拉西坦.md 肉豆蔻醚.md 肌酸.md 育亨宾.md 胍丁胺.md 胞磷胆碱.md 致幻仙人掌.md 舒芬太尼.md 艾捉菲尼.md 艾斯卡林.md 芬太尼.md 芬纳西泮.md 苄达明.md 苏摩.md 苏糖酸镁.md 苦茶碱.md 苯丙胺.md 苯基吡拉西坦.md 苯巴比妥.md 苯海拉明.md 苯海索.md 茄参属.md 茴拉西坦.md 茶氨酸.md 茶苯海明.md 莫达菲尼.md 菲尼布特.md 萘哌甲酯.md 蓝柄裸盖菇.md 蓝莲花.md 裸盖菇属.md 褪黑素.md 西班牙裸盖菇.md 豹斑鹅膏.md 赛洛西宾蘑菇.md 赛洛辛.md 酒石酸氢胆碱.md 酒精.md 酪氨酸.md 金刚烷胺.md 银冠玉.md 锂.md 镁剂.md 阿托品.md 阿普唑仑.md 阿莫达菲尼.md 颠茄.md 骆驼蓬.md 鹅膏蕈氨酸.md 鹅花树.md 麦斯卡林.md 麻黄碱.md 鼠尾草素乙.md 鼠尾草素甲.md ) .gitignore .nav.yml CODE_OF_CONDUCT.md CONTRIBUTING.md extra.css FOW_WHITE.jpeg FreeODwiki.png home.md LICENSE LICENSE-OD mkdocs.yml README.md requirements.txt robots.txt sitemap.xml )
+</fileTree></glossary>
 <raw>
 
 </raw>
 */
+
 
 // ================== 1. 中文内容 ==================
 // chineseParas[0] = 标题中文
 // chineseParas[1] = 药物中文
 // chineseParas[2...] = 正文各段中文
 
-const chineseParas = ["生命是一场旅程，而非终点", "大麻", "我一直都算是相对孤独的人，但这让我的孤独跌到了一个前所未有的低点。我现在正坐在自家客厅的安稳环境里写下这些；过去一个月里，我都待在这里，收拾着自己人生破碎散落的残片。在我看来，我的生活一直都是一团情绪上的混乱，但真正让它变得更糟的，只有我自己做出的选择，以及我在生活中做过的那些事。这就是成瘾。它程度不算重，也许正因如此，这种成瘾才是人生中最容易被遮蔽的那一种；但现在我终于能看清它了，也终于看清了它对我人生造成的影响。", "我是个挺聪明、年轻、也算长得不错的家伙，这点我承认；也许正因为如此，我这一生才能一直躲开自己的抑郁。我父母离婚了，这就是我抑郁的根源。他们在任何事情上都无法达成一致，他们是两个截然不同的人，什么都谈不拢，而我一直被夹在中间。我从父母那里各自继承了两种极性相反的人格，把它们都收容进了自己的心灵里，而这让我快要发疯。这些年来，尤其是在我高中生涯最后两年里，我原本开始逐渐能够较好地掌控自己的抑郁，直到我遇见了玛丽简，她毁掉了一切。其实这并不能怪她。是我自己选择把她带进我的生活。我的朋友们都大量使用大麻，而这么多年来我一直选择不用。我知道药物不好，但我根本不知道为什么不好。我不了解它会对人的心理产生什么影响，而我又非常好奇。我想，我最初的使用更像是在试探一种禁忌，但它最终变成了一趟通往地狱的旅程，而现在我正在往回走。", "起初，我大约每两个月和朋友一起用一次大麻，图个乐子；几年之后，我开始越来越频繁地和朋友一起用。高中毕业年级那年年中，有一周我开始每周晚上用一次，后来变成一周两次，直到我每晚都靠它入睡。我睡不着，是因为我无法把心思从一年前分手的前女友身上移开。这其实是我为了能抽而对自己兜售的谎言。这就是成瘾在第一线运作的样子。一开始真的很有趣。我会熬夜看电影或者打电子游戏。到了那个时候，我其实已经不太喜欢和朋友一起抽，虽然我还是会这么做。在我看来，跟朋友一起抽，只会占用我在家独自抽的时间（和大麻）。大多数时候，我一进入药效就会变得非常偏执，不管是在家里还是和朋友在一起时都是如此；这也是我不喜欢和别人一起抽的原因之一，但即便如此，我还是一直在抽。", "等我上了大学，一切他妈就彻底放飞了。我在圣巴巴拉城市学院上学，住在加州大学圣巴巴拉分校所在的大学城伊斯拉维斯塔。姑娘、冲浪、大麻（哦对了，还有上学）就是那里生活的全部主题。平均每周派对三到五天，几乎根本没剩多少时间留给学业。而让我的成瘾更容易被持续喂养的是：我的室友是个卖家，而我高中时最好的朋友也搬进了我宿舍走廊尽头的房间。对我当时过的那种生活来说，一切都再完美不过了。", "可我依然非常孤独。我仅有的朋友，都是和我一起抽的人。和那些不抽的朋友之间的关系随着时间推移逐渐淡了；而和我那些抽友之间的关系本来也糟透了，因为我从来没有投入过任何感情。我只是和他们一起抽，仅此而已。这并不是大麻的错。真正该被责怪的，是我对自己的缺乏爱，以及这种状态与大麻相伴而行。我其实一直都知道这一点，但我什么都没做来帮助自己。我根本不想帮自己。我一开始就恨自己，而大麻只不过是在缓解这种痛苦。现在我意识到，我本该更早寻求专业帮助，而不是等到后来才去。尽管如此，我其实在更小的时候、上初中时就曾接受过治疗，但那时依然没有什么效果。", "有一段时间，我还能维持一个还算不错的平均绩点，直到第二学期来临。我开始不去上课，只为了跑到走廊尽头我最好朋友的套间里抽大麻、玩电脑游戏。到这个时候，我已经穷得叮当响，只能待在朋友的宿舍里等他们抽的时候顺便带我。我成了个肮脏的白嫖鬼。也正因如此，我对自己的尊重丧失了太多。有些没大麻可抽的日子里，我会整天把自己锁在宿舍房间里，垂头丧气地晃来晃去，盼着死亡赶紧来把我带走。我开始变得非常抑郁，不去上课，只去上班。生活糟糕到一种程度，以至于我开始遗憾自己窗户离地面的距离不够高，不足以让我结束生命。大多数日子里，我都开始盼望死亡降临到自己身上，那已经成了我的地狱。", "学年结束后，我参加了半个暑期课程学期，随后就退学了。我从宿舍搬到了伊斯拉维斯塔最热闹的派对街区。起初一切都还不错，直到我再次陷入严重抑郁，再也无法想象自己还能在那个鬼地方再待上一年，于是我拼命想搬回家。我父母理解了，我便搬回了家，而在那里，我只是在自己的大麻成瘾里越陷越深。", "在圣巴巴拉时，有时候我会把自己能弄到的很便宜的大麻转手给朋友，因为我有门路却没钱；作为回报，朋友们会请我抽。回家之后，我已经掌握了足够多关于这一套黑话与门道的知识，于是开始做起了卖货。我从不赊账，所有货都是自己掏钱买自己的芽。后来我找了份工作，大概一个月后，我每三天就能出掉两盎司，这足够让我免费抽，还能赚到钱。我知道自己做的只是小打小闹，但那是我给自己开辟出来的一块挺不错的小生态位。不过这个泡沫并没持续太久；在我开始涉足卖其他药物之后（比如摇头丸、可卡因），它就破了。而且，我对这些对我来说还算新鲜的药物也再次充满了好奇，尤其是可卡因，因为我以前从来没钱碰它。我并没有对可卡因上瘾，但我和摇头丸却有过一段灾难性的纠缠，几乎直接把我搞到没法继续做下去，因为我手里的药片根本不够，而我又总是在消耗自己大部分存货。再加上，我一度是在自己工作的冰淇淋店里出货，事情已经开始变得危险起来。", "等我破产以后，我觉得是时候来一次重大的改变了。人生中总会有那么一个时刻：你已经厌烦自己正在过的生活，到了根本无法再把十年后的自己想象成一个幸福的人的地步。我决定，对我来说，那个时刻已经到了。我厌倦了把一切都瞒着父母，过着双重生活。我也厌倦了开车四处跑，车里带着足以让我因重罪坐四到六年牢的大量药物和器具。我同样痛恨这样一个事实：把药物放在家里，也同样是在把我的父母置于危险之中。", "有一天，我妈下班回到家时，我向她坦白了。我让她坐下，把我的烟斗（名字叫Spot）和一罐大麻拿了出来。除了贩卖的事我没说之外，我把一切都告诉了她，因为那部分她永远也不会理解。我告诉她我的成瘾，也告诉她我想停下来。我告诉她我有多抑郁，也告诉她我想得到帮助。是时候改变了，而她对此理解得非常透彻。她的反应简直无价。她之前完全不知道，但她回答说：“所以，这就是你一直看起来那么糟糕的原因。”", "“是的，妈，这就是原因 =）”", "我感觉肩上的一大块重担被卸下来了，但我知道自己前面还有很长的路要走。在我坦白之后的四周，是我很久以来经历过最糟糕的日子。我一直都很愤怒，也不想和任何人说话。我还再次找了个治疗师来帮助我处理抑郁。上周，在已经戒断一个半月之后，我复发了。我抽了一个星期，然后意识到自己为什么再也不能碰它了。我现在甚至已经不是在追求欣快感了。我只是在寻找一种精神状态的改变，好把我从当下那种痛苦的思维轨道里带走。我的治疗师理解这一点，现在正打算让我开始服用抗抑郁药，而我觉得这其实一直都是我所需要的。", "我今天还要去参加人生中的第一次“大麻匿名会”聚会。我对此非常紧张，也根本不想去，但我知道无论如何，这终究会是最好的安排。至少我能在那里遇见和我一样的人。对我来说这很难，因为我知道问题的主要根源并不只是大麻，而是我的抑郁。它们一旦结合在一起，就会把我拖垮。只要我有治疗师引导我，我就有信心自己能挺过去。去MA（大麻匿名会）是她的主意，而我信任她，所以我当时想：“那就试试吧？” 现在想来，拥有治疗师，再去参加MA，正好同时应对了我生命中那两样正在把我拖下去的东西：抑郁，以及大麻。", "我这一生都在探寻自己的灵魂。我19岁了，而我昨天在一次四英里的徒步中意识到了一件事，嗯，你没法把它解释清楚。有时候，你会走到人生中的某个点，在那个点上，你知道自己会没事的。我的人生开始逐渐变得有意义，各种东西也开始汇拢到一起，但如果没有我的父母，我不可能走到这里。一旦你把家人带入自己的处境之中，不管那处境是什么，真正关心你的人都不会再让你滑落下去。你只需要做出一个决定：让他们进入你的生活。人生中总有那么一个时刻，你必须允许自己被帮助。我接下来的障碍，就是允许自己被别人爱，也允许自己爱自己。", "大麻（1）：回顾 / 总结（11）、抑郁（15）、成瘾&习惯化（10）、不适用（38）"];
 
-const chineseDosechart = ["给药:", "重复", "抽吸", "大麻", "（植物材料）"];
-const chineseBodyweight = "130磅";
 
-// 剂量表每一行对应一条中文
-// const chineseDoseRows = [
-//   '剂量：7 mg，口服，4-MeO-DMT（胶囊）',
-//   '重复使用，口服，酒精（啤酒/葡萄酒）',
-//   '重复使用，吸食，大麻'
-// ];
+
+
+const chineseParas = ["这就是终点了，美丽的朋友", "右美沙芬&镁剂", "我以前用过很多次右美沙芬，也用过大麻和蘑菇。然而，这就是终点了。这真的是我一生中最糟糕的一次经历。", "我已经计划第四高原剂量有一段时间了，因为在前几周我已经尝试过一些极其令人心智扭曲的第三高原剂量。我想见到上帝，想打开自己的灵性。所以，在这次体验前20分钟，我服用了750毫克镁剂，这是我第一次把镁剂和右美沙芬一起用，然后又服用了900毫克装在Robitussin止咳凝胶胶囊里的右美沙芬。由于我是把它分散在大约50分钟里服下的，所以过了一阵子才起效，然后当我看向时钟时，我感觉自己和那些数字产生了联系。我不记得具体时间了，但我大概是在7点到8点之间开始服用的，而看钟的时候大概已经是9点30分左右了。", "我整个人都彻底失去状态了，我说的是真的，彻——底——失——去——状——态。我什么都不记得了，直到后来我父亲正抱着我下楼。‘就像我还是个小婴儿的时候一样，’我心里这样想着，然后一切都变得非常悲伤。接着我母亲开车把我送去了急诊室，因为我的瞳孔放得很大，心脏跳得又重又快，连胸口都能看出来。我对急诊室里的事也完全没有印象，直到几小时后我醒来，看到一位非常悲伤而疲惫的母亲坐在我旁边，而我的阴茎里插着一根管子，那是最让人不舒服的东西。她说，昨晚她在我房间里发现了我，还在我的抽屉里找到了Robitussin止咳凝胶胶囊，而我只是握着她的手，和她说话。", "幸运的是，我已经有几个星期没抽大麻了，所以他们做药物检测时，大麻结果是阴性。然而，PCP却百分之百呈阳性！我从来没有用过PCP，所以我向医生解释了右美沙芬会让PCP出现假阳性，他随后打电话给中毒控制中心确认了这一点。然后护士把那根管子从我的阴茎里拔了出来，这个过程非常疼，而我妈妈则挽着我的胳膊陪我走到车边。那时大概是凌晨3点30分，而我们俩都一点觉也没睡。", "我回到家后走回自己的房间时，药效仍然很强，结果看到我父亲已经把我墙上的所有海报都撕了下来，还搜查了我的房间，并在这个过程中没收了我的玻璃烟斗。这真的是一次糟糕透顶的经历。这辈子我都不会再碰右美沙芬了。", "右美沙芬（22）、维生素 / 补充剂（231）、药物检测（59）：糟糕体验（6）、彻底失控&体验事故（7）、独自（16）"];
+const chineseDosechart = ["给药:", "750 毫克", "口服", "维生素 / 补充剂", "", "", "900 毫克", "口服", "右美沙芬", "（胶囊）"];
+const chineseBodyweight = "115 磅";
+
+
+
+
+
+
+
+
 
 // ================== 2. 选择器 ==================
 const titleSelector = 'div.title';
@@ -158,17 +165,17 @@ const footdataTopicSelector  = 'td.footdata-topic-list';
 
 // ================== 3. 你的本地字体 + 样式 ==================
 const customFont   = "南希新圆体 常规";
-const fontSize     = "20px";
-const fontSizeTitle     = "27px";
-const fontSizeDosechart = "15px";
-const textColor    = "#7ace87";
+const fontSize     = "21px";
+const fontSizeTitle     = "28px";
+const fontSizeDosechart = "15.5px";
+const textColor    = "#6ddd7e";
 const textColorTitle    = "#63e07e";
-const textColorDosechart    = "#7adb92";
+const textColorDosechart    = "#6ddd7e";
 // const textColor    = "#083f91";
 // const textColorTitle    = "#04508e";
 // const textColorDosechart    = "#00234e";
 const lineHeight   = "1.3";
-const paraMargin   = "4px 1 4px 1";
+const paraMargin   = "12px 1 12px 1";
 
 // ================== 以下代码基本无需修改 ==================
 
@@ -279,47 +286,31 @@ if (substanceEl && chineseParas[cnt]) {
   console.warn('⚠️ 没找到标题，或 chineseParas[0] 为空');
 }
 
-// // ---------- B. 插入剂量表中文 ----------
-// const doseRows = [...document.querySelectorAll(doseSelector)];
-// if (doseRows.length > 0) {
-//   doseRows.forEach((row, i) => {
-//     if (!chineseDoseRows[i]) return;
 
-//     const newRow = document.createElement('tr');
-//     newRow.className = 'cn-dose-translation-row';
 
-//     const td = document.createElement('td');
-//     td.colSpan = row.children.length || 5;
-//     td.style.cssText = `
-//       padding: 2px 0 6px 0 !important;
-//       border: none !important;
-//     `;
-
-//     const cnDose = makeCnBlock(
-//       chineseDoseRows[i], 
-//       'cn_translation', 
-//       'div',
-//       'margin: 0 !important; font-size: 16px !important;'
-//     );
-
-//     td.appendChild(cnDose);
-//     newRow.appendChild(td);
-//     row.after(newRow);
-//   });
-// } else {
-//   console.warn('⚠️ 没找到 dose chart');
-// }
 
 // ---------- C. 插入正文中文 ----------
 // Erowid 这里正文不是 p，而是 report-text-surround 下的直接文本节点
 const bodyWrap = document.querySelector(bodySelector);
 
+// 插入水印
+
+const captionTable = bodyWrap.firstElementChild;
+
+const captionSalvia = document.createElement('div');
+captionSalvia.style.opacity = 0.15;
+captionSalvia.textContent = "中文翻译by @SalviaSWC";
+
+captionTable.appendChild(captionSalvia);
+
 if (!bodyWrap) {
   console.error('❌ 没找到正文容器');
 } else {
-  const bodyTextNodes = [...bodyWrap.childNodes].filter(node => {
+  const bodyTextNodes = [...bodyWrap.childNodes].filter(node => { 
     return (
-      node.nodeType === Node.TEXT_NODE &&
+      (node.nodeType === Node.TEXT_NODE ||
+        node.nodeName == "SPAN"
+      ) &&
       node.textContent.trim().length > 0
     );
   });
@@ -456,3 +447,9 @@ for(let i=2;i<chineseParas.length;i++)
 }
 
 console.log(s);
+
+/*
+
+使用本文，模仿语文高考，生成阅读理解的压轴题和参考答案，也是最难的一题，考察包括但不限于写作手法、写作意图、表达效果、行文风格。注重药物在文中的作用。为了体现你的模型的实力，每一道题要求结合教材中的一篇课文(自读课文除外)，形成对照阅读题。是简答题，不是选择题。生成10道题左右。不少于5000字。
+
+*/
