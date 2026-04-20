@@ -8,10 +8,10 @@ title : Markdown语法指南
 
 Markdown是一种使用纯文本格式编写，通过适当的编译，能够显示出丰富特征的标记语言。以下是一些常用的Markdown语法：
 
-## Markdown & Wiki.js 简单说明
+## Markdown 简单说明
 **加粗**  
 *斜体*  
-~~删除线~~  
+  
 
 # 标题一
 ## 标题二
@@ -20,61 +20,26 @@ Markdown是一种使用纯文本格式编写，通过适当的编译，能够显
 ##### 标题五
 ###### 标题六
 
-- 无序列表
-1. 有序列表
+
 
 `代码块`  
-```markdown
-多行代码块
-```
+```Markdown   
+多行代码块   
+```    
 
-插入图片 `![回落文本](链接/目录 “说明文本(可选)”)`  
-![FreeODwiki.png](/FreeODwiki.png)
 
-超链接 `[文本](链接/目录 “说明文本(可选)”)`  
-[freeod.wiki](https://freeod.wiki/)  
 
-链接 <https://freeod.wiki>  
+链接 <https://freeodwiki.org>  `<https://freeodwiki.org>`
 
-^上标^  
-~下标~  
 
-一条线
----
-如果你不要这个标题二效果上行留空
 
 > 引用
-
-*(不建议使用wiki.js的语法)*
-
-> Wiki.js 资讯引用
-{.is-info}
-
-> Wiki.js 成功引用
-{.is-success}
-
-> Wiki.js 警告引用
-{.is-warning}
-
-> Wiki.js 错误引用
-{.is-danger}
 
 $支持内嵌\TeX$
 <p style="color:#456789">支持内嵌HTML</p>
 
-```markdown
-**加粗**  
-*斜体*  
-~~删除线~~  
-
-# 标题一
-## 标题二
-### 标题三
-#### 标题四
-##### 标题五
-###### 标题六
-
 - 无序列表
+  
 1. 有序列表
 
 `代码块`:把你想要的文字夹在`中间  
@@ -84,38 +49,59 @@ $支持内嵌\TeX$
 ![FreeODwiki.png](/FreeODwiki.png)
 
 超链接 `[文本](链接/目录 “说明文本(可选)”)`  
-[freeod.wiki](https://freeod.wiki/)  
+[freeodwiki.org](https://freeodwiki.org/)  
 
 相对路径，以home.md为例:[`(./home.md)`](./home.md)
 
-相对路径，进入上一层目录(无法在`CONTRIBUTING.md`中举例):[`(../home.md)`](../home.md) *该语法可叠加，可以返回多层目录以前*
+相对路径，进入上一层目录(无法在`CONTRIBUTING.md`中举例):    [`(../home.md)`](../home.md) *该语法可叠加，可以返回多层目录以前*
 
-链接 <https://freeod.wiki>  
+<sup>上标</sup> `<sup>上标</sup>`   
 
-^上标^  
-~下标~  
+<sub>下标</sub> `<sub>下标</sub>`  
 
-一条线
+<s>删除线</s> `<s>删除线</s>`
+
+一条线    `---`
+
 ---
 如果你不要这个标题二效果上行留空
 
-> 引用
+> 引用  `> 引用`   
 
-> Wiki.js 资讯引用
-{.is-info}
+<details>  <summary> 展开框文本 </summary>
 
-> Wiki.js 成功引用
-{.is-success}
+展开框内部。注：若要在展开框内部使用链接，需要将`<details>`换成 `<details markdown="span">`
 
-> Wiki.js 警告引用
-{.is-warning}
+</details>
 
-> Wiki.js 错误引用
-{.is-danger}
-
-$支持内嵌\TeX$
-<p style="color:#456789">支持内嵌HTML</p>
 ```
+<details>  <summary> 展开框文本 </summary>
+
+展开框内部。注：若要在展开框内部使用链接，需要将`<details>`换成 `<details markdown="span">`
+
+</details>
+```
+
+### 不推荐使用的语法
+
+由于本仓库涉及多个平台，因此不推荐使用仅特定Markdown渲染器可用的语法，或在不同Markdown渲染器中存在歧义的语法。
+
+以下是一些不建议使用的语法，并给出推荐的替代方案：
+
+- ^上标^ `^上标^`  
+  推荐替代方案：<sup>上标</sup> `<sup>上标</sup>`
+- ~下标~ `~下标~`
+  推荐替代方案：<sub>下标</sub> `<sub>下标</sub>`
+-  ~删除线~ `~删除线~`
+  推荐替代方案：<s>删除线</s> `<s>删除线</s>`
+- Wiki.js 资讯引用   
+{.is-info}   
+-  Wiki.js 成功引用  
+{.is-success}    
+- Wiki.js 警告引用   
+{.is-warning}    
+- Wiki.js 错误引用    
+{.is-danger}    
 
 
 
