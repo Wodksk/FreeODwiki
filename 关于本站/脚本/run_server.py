@@ -26,10 +26,10 @@ extra_css:
   - extra.css
 
 plugins:
-#  - search
-#  - optimize
-  - awesome-nav
-  - glightbox
+ - search
+ - awesome-nav
+ - glightbox
+ #  - optimize
 
 markdown_extensions:
   - abbr
@@ -81,6 +81,11 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+#   - pymdownx.slugs:
+#       slugify: !!python/object/apply:pymdownx.slugs.slugify {}
+  - toc:
+      slugify: !!python/object/apply:pymdownx.slugs.slugify {} # Unicode 支持
+      permalink: true # 各级标题锚点
   
 theme:
   language: zh
@@ -90,6 +95,9 @@ theme:
 
   features:
     - navigation.top
+    - navigation.path # 显示路径（二级目录之后显示）
+    - navigation.tabs # 导航顶栏（一级目录）
+    - navigation.tabs.sticky # 固定导航顶栏，下滑不消失
     - content.tooltips
     - content.footnote.tooltips
     - content.code.copy
