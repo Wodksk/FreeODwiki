@@ -17,7 +17,7 @@
 >5.与所有OD扩散组织划清界限。保证OD不向普通民众扩敬。   
 >6.自杀干预和心理援助的同僚谨慎对待OD史病人，温柔劝导，不可强制威胁其人身自由和安全    
 
-<details> <summary> OD不扩散共识图片 </summary>
+<details markdown="span"> <summary> OD不扩散共识图片 </summary>
   
 <img src="/文件/lingqicodesad_status_1753227409690865827_photo_1.jpg">
 
