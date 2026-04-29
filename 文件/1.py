@@ -2,7 +2,7 @@ import os
 
 def rename_svg_files(directory):
     """
-    重命名目录下所有以 .svg.png 结尾的文件，去掉 .png 后缀。
+    重命名目录下所有以 .svg.png 结尾的文件，去掉 .svg 后缀。
     
     参数:
     directory (str): 要处理的目录路径，例如 '.' 表示当前目录。
