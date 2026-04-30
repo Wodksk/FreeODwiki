@@ -5,9 +5,15 @@ description:
 
 # 来自reddit的翻译文档
 
-
-
 [◀返回报告](../index.md)
+
+Reddit上有很多交流药物的社区，也有很多有价值的内容，其中不少有“节目效果”的贴子。本页面收录了本站翻译的Reddit贴子。
+
+部分贴子附赠高考语文阅读理解和材料作文联系(AI生成，仅供娱乐)。
+
+
+
+
 
 
 ## *
@@ -78,13 +84,24 @@ description:
 
 [鼠尾草药物报告：变成一个吊扇活了15年。第一次也是我的唯一一次体验。](./salvia_trip_report_lived_15_years_as_a_ceiling.md)
 
-## 0-9
+<!-- 0-9 -->
 
-### 4
+## 3
+
+### 3-MMC
+
+[3-MMC 是史上最棒的药物（迷幻剂除外）](./3mmc_is_the_best_drug_ever_outside_of_psychedelics.md) <br>
+
+
+## 4
+
+### 4F-MPH
 
 [4F-Mph本来是为了学习用的，结果变成了一整年的兴奋剂撸管噩梦](./4fmph_for_studying_turned_into_one_year_of.md)
 
-## \#
+<!-- # -->
+
+## α
 
 ### α-PiHP
 
