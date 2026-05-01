@@ -167,18 +167,7 @@ LSA 产生大量的致幻认知效应。其中最突出的典型效应包括：
 * **[苯二氮卓类物质](/文档/药物分类/苯二氮卓类物质.md)** - 根据剂量的不同，苯二氮卓类物质可以轻微到完全降低 LSA 旅程的认知、躯体和视觉效应强度。它们在停止“恶梦旅程”方面非常有效，代价是失忆和旅程强度降低。获取它们用于此目的时需谨慎，因为它们非常容易被滥用哦。
 * **[致幻剂](/文档/药物分类/致幻剂.md)** - 当与其他致幻剂联用时，每种物质的躯体、认知和视觉效应都会增强并产生强烈的协同作用。这些物质之间的协同作用是不可预测的，因此通常不建议这样做。如果选择联用致幻剂，建议从比单独使用任一物质时都要低得多的剂量开始喵。
 
-### 体验报告
-| 来源 | 报告标题 |
-| --- | --- |
-| PsychonautWiki | [报告/psychounautwiki/Experience:_~8_HBWR_seeds_-_I_think_I%27m_getting_it] |
-| PsychonautWiki | [报告/psychounautwiki/Experience:1000_Morning_Glory_seeds_-_Rediscovering_the_Self] |
-| PsychonautWiki | [报告/psychounautwiki/Experience:250_seeds_-_Harsh_body_load] |
-| PsychonautWiki | [报告/psychounautwiki/Experience:270_MG_seeds_ipomoea_tricolor_v._heavenly_blue_(LSA)_-_My_favourite_one_so_far] |
-| PsychonautWiki | [报告/psychounautwiki/Experience:50_Seeds_of_Morning_Glory_(Raw,_Chewed)_-_Nausea,_Euphoria,_Sedation] |
-| PsychonautWiki | [报告/psychounautwiki/Experience:800_seeds_LSA_-_My_First_Trip_Ever] |
-| PsychonautWiki | [报告/psychounautwiki/Experience:Hawaiian_Baby_Woodrose_(5_seeds)_-_Five_seeds_from_hell] |
-| PsychonautWiki | [报告/psychounautwiki/Experience:LSA_(20_HWBR_seeds)_%E2%80%93_A_pleasant_adventure_with_a_harsh_body_load] |
-| Erowid | [LSA 体验库](https://www.erowid.org/experiences/subs/exp_LSA.shtml) |
+
 
 天然植物来源
 ---
