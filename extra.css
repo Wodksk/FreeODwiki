@@ -4,6 +4,10 @@
   margin-right: auto;
 }
 
+details {
+  span: "markdown";
+}
+
 /*rt {
   font-size: 65%;
 }*/
