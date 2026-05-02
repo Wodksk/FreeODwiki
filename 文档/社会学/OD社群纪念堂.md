@@ -4,21 +4,21 @@
 
 悼念那些死去的同僚们......
 
-- @Spr1ngW1nd
+- @x:Spr1ngW1nd
   2023.01.11 致幻剂（意外）
-- @SS3B_0016
+- @x:SS3B_0016
   2024.01.12 氯硝西泮意外/NaNO2自杀（有待考证）
-- @LFanyDeath0606
+- @x:LFanyDeath0606
  2024.08.05 NaNO2+DXM+金刚烷胺（自杀，死亡存疑）
-- @Healer_Gu
+- @x:Healer_Gu
  2025.03.25 阿片类奥施康定（意外）
-- @Meer19002
+- @x:Meer19002
  2025.06.17 NaNO2（自杀）
-- @LCG_Akiball
+- @x:LCG_Akiball
  2025.06.19 NaNO2+可乐定及其他（自杀）
-- @cuichuna7
+- @x:cuichuna7
  2025.07.10 LSD衍生物（意外）
-- @ASplendour15
+- @x:ASplendour15
  2026.04.11 丙泊酚（自杀）
-- @yng014522566684
+- @x:yng014522566684
  2026.04.13 曲马多+普瑞巴林+愈美（意外）
