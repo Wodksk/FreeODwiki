@@ -48,6 +48,13 @@ description: 中国特定背景下的药物与社会、法律的文档
 </ul>
 </details>
 
+## 其他
+
+<details markdown="1"><summary> <strong>点此展开</strong> 其他文件 </summary>
+<ul>
+<li> <a href="褚宸舸：“戒毒和收容教育法律问题”学术研讨会发言纪要.md">褚宸舸：“戒毒和收容教育法律问题”学术研讨会发言纪要</a></li>
+</ul>
+</details>
 
 ---
 
